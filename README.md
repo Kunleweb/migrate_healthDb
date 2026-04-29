@@ -1,3 +1,3 @@
 This project builds a simple batch data pipeline that extracts data from PostgreSQL, stores it in Amazon S3, catalogs the data using AWS Glue, and makes it queryable through Amazon Athena. The project is structured to separate extraction, loading, transformation, utility logic, documentation, scripts, tests, and sample data.
 
-[!Architecture](C:\Users\owner\Desktop\data_eng2\migrate_healthdb\migrate_healthDb\img\arch.gif)
+[!Architecture](./img/arch.gif)
