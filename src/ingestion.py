@@ -29,6 +29,8 @@ def check_S3(s3, bucket_name):
     except Exception as e:
         print(f'connection failed:{e}')
         return False
+
+
 check_S3(s3, bucket)
 
 
