@@ -2,13 +2,20 @@ import boto3
 import os
 import awswrangler as wr
 from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
+load_dotenv(dotenv_path=ENV_PATH)
 
 #connection strings
 access = os.getenv('ACCESS_KEY')
-secret= os.getenv('SECRET_KEY')
-region= os.getenv('REGION')
+secret = os.getenv('SECRET_KEY')
+region = os.getenv('REGION')
+
+if access: access = access.strip("'").strip('"')
+if secret: secret = secret.strip("'").strip('"')
+if region: region = region.strip("'").strip('"')
+
 bucket = 'healthbridge-data-lake'
 
 #create a boto3 session
