@@ -1,6 +1,6 @@
 # HealthBridge Data Pipeline 
 
-Data migration pipeline for ingesting healthcare records from a PostgreSQL database, and ingests into an Amazon S3, and makes them available for high-performance querying using Amazon Athena.
+Data migration pipeline for ingesting healthcare records from a PostgreSQL database to Amazon S3 and make them available for high-performance querying using Amazon Athena.
  
 ![Architecture](/img/arch2.gif)
 
@@ -9,7 +9,7 @@ Data migration pipeline for ingesting healthcare records from a PostgreSQL datab
 The workflow is broken down into three main phases:
 
 ### 1. Data Extraction (Landing Layer)
-Data is originally stored in a Supabase PostgreSQL database. A Python extraction script (`src/extractor.py`) connects to the database via SQLAlchemy and pulls records across several core tables (`appointments`, `centers`, `patients`, `payments`, `tests`, `test_results`). The raw data is written directly to an Amazon S3 landing zone (`s3://healthbridge-data-lake/landing/`) in CSV format using AWS Data Wrangler.
+A Python extraction script (`src/extractor.py`) connects to the database via SQLAlchemy and pulls records across several core tables (`appointments`, `centers`, `patients`, `payments`, `tests`, `test_results`). The raw data is written directly to an Amazon S3 landing zone (`s3://healthbridge-data-lake/landing/`) in CSV format using AWS Data Wrangler.
 
 ### 2. Transformation (Processed Layer)
 Once the data lands in S3, an AWS Glue PySpark job (`scripts/glue_etl.py`) is executed to process the raw files. This script performs several automated cleaning and optimization tasks:
