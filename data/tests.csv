@@ -1,0 +1,6 @@
+test_name,category,price,test_id
+Blood Test,Lab,50,1
+MRI Scan,Imaging,500,2
+X-Ray,Imaging,100,3
+COVID Test,Lab,30,4
+Urine Test,Lab,25,5
