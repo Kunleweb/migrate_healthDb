@@ -4,3 +4,9 @@ This project builds a simple batch data pipeline that extracts data from Postgre
 
 
 ![Glue Catalog](img/glue_catalog.png)
+
+
+![Athena Querying for Data Validation](img/athena.png)  
+
+
+
